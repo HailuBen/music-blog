@@ -5,30 +5,60 @@ html,body{height: 100%; margin: 0;}
 html{}
 
 body{
-    background-color: #0f0c10;
+    /* PALETTE */
+    color: #1a101f;
+    color: #391445;
+    color: #800080;
+    color: #7C08B4;
+    color: #dfa3ff;
+    color: #F1D3FF;
+    color: #CCABF1;
+    color: #A3A4FF;
+    color: #5858F9;
     color: #e6e6e6;
+
+    background-color: #0f0c10;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
 }
 header{
-
-}
-nav{
     text-align: center;
     background-color: #BBADD5;
     overflow: hidden;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
+    flex-wrap: wrap;
 }
+nav{
+    padding: 0.5em;
+}
+.hamburger{
+    display: none;
+    background-color: transparent;
+    border: 0;
+    color: #e6e6e6;
+    font-size: 4vh;
+    text-decoration: none;
+    cursor: pointer;
+}
+.hamburger:focus{
+    outline: none;
+}
+.hamburger:active{
+    color:  #0f0c10;
+}
+
 nav a{
-    padding: .5em 3em;
+    padding: .5em 2em;
     text-decoration: none;
     transition-duration: 0.5s;
+    font-size: 2.5vh;
+    color: #391445;
+}
+nav hr{
+    display: none;
 }
 nav a:last-child{
     /* border-left: none; */
@@ -43,7 +73,7 @@ nav a:active{
     font-weight: 600;
 }
 nav a:hover{
-    color: #431c8b;
+    color: #6242cd;
     background-color: #D1CADE;
 }
 
@@ -67,4 +97,41 @@ footer{
 /* mouse over link */
 .b-footer-b:hover {
     color: #ff69b4;
+}
+
+/* media queries */
+@media screen and (max-width: 650px){
+    #navbar{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    #navbar.show {
+        display: flex;
+    }
+    nav a, nav{
+        padding: 0;
+    }
+    nav a{
+
+    }
+    nav hr{
+        display: block;
+        margin: .5vw;
+    }
+    
+    nav b{
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 850px){
+    nav a{
+        font-size: 2vh;
+    }
 }
