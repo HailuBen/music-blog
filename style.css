@@ -5,34 +5,48 @@ html,body{height: 100%; margin: 0;}
 html{}
 
 body{
-    /* PALETTE */
-    color: #1a101f;
-    color: #391445;
-    color: #800080;
-    color: #7C08B4;
-    color: #dfa3ff;
-    color: #F1D3FF;
-    color: #CCABF1;
-    color: #A3A4FF;
-    color: #5858F9;
-    color: #e6e6e6;
+    /* PALETTEs */
+    /* p1 */
+    --vista-blue: #a3a4ffff;
+    --tropical-indigo: #9f90f0ff;
+    --tropical-indigo-2: #9b7be0ff;
+    --purpureus: #9252c0ff;
+    --grape: #6c2cbdff;
+    --majorelle-blue: #6242dbff;
+    --risd-blue: #5858f9ff;
+    --medium-slate-blue: #716ef0ff;
+    --tropical-indigo-3: #8a83e7ff;
+    --lilac: #bbadd5ff;
+    /* p2 */
+    --risd-blue: #5858f9ff;
+    --tropical-indigo: #9f9ff0ff;
+    --platinum: #e6e6e6ff;
+    --thistle: #d1cadeff;
+    --lilac: #bbadd5ff;
+    --mauve: #dfa3ffff;
+    --finn: #633874ff;
+    --russian-violet: #391445ff;
+    --dark-purple: #1a101fff;
 
     background-color: #0f0c10;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
 }
 header{
     text-align: center;
-    background-color: #BBADD5;
+    background-color: var(--vista-blue);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
     flex-wrap: wrap;
+    /* border: 2px ridge white; */
 }
 nav{
     padding: 0.5em;
+    color: #6242cd;
 }
 .hamburger{
     display: none;
@@ -67,14 +81,94 @@ nav a:nth-child(2), nav a:nth-child(3){
     /* border-left: none; */
 }
 nav a:link{
-    color: #130035;
+    color: #5419de;
 }
 nav a:active{
     font-weight: 600;
 }
 nav a:hover{
     color: #6242cd;
-    background-color: #D1CADE;
+    background-color: white;
+}
+nav a:visited{
+    color: #800080;
+}
+
+main{
+    padding: 2em 0 4em 2em;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    transition-duration: 1s;
+}
+.tooltip:hover{
+    color: #CCABF1;
+}
+.tooltip .tooltiptext {
+    font-size: 1vh;
+    visibility: hidden;
+    width: 14vh;
+    background-color: #391445;
+    color: #e6e6e6;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -80%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: 1s;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    /* border-color: #391445 transparent transparent transparent; */
+    border-left: 7px solid transparent ;
+    border-right: 7px solid transparent ;
+    border-top: 7px solid #391445;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* home */
+.home-playlist{
+    padding: 1em;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    
+}
+
+/* songs page */
+#results {
+    margin-top: 20px;
+}
+
+/* about page */
+.about-headings{
+    padding: 4em;
+    padding-bottom: 0;
+}
+.about-main{
+    margin: 0 10%;
+}
+.about-article{
+    padding: 4em;
+}
+.about-article p{
+    width: 50%;
 }
 
 footer{
@@ -99,8 +193,16 @@ footer{
     color: #ff69b4;
 }
 
+@media screen and (max-width: 950px){
+    nav a{
+        font-size: 2vh;
+    }
+}
+
 /* media queries */
-@media screen and (max-width: 650px){
+@media screen and (max-width: 820px){
+    header{
+    }
     #navbar{
         display: none;
         flex-direction: column;
@@ -113,7 +215,7 @@ footer{
         padding: 0;
     }
     nav a{
-
+        font-size: 3vh;
     }
     nav hr{
         display: block;
@@ -130,8 +232,6 @@ footer{
 
 }
 
-@media screen and (max-width: 850px){
-    nav a{
-        font-size: 2vh;
-    }
-}
+
+
+
